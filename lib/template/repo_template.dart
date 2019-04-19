@@ -8,19 +8,19 @@ String getRepoService(String name) {
   String import = """
 import 'dart:async';
 
-import 'package:$packageProject/$lower/dto/delete/delete_${lower}_api_request.dart';
-import 'package:$packageProject/$lower/dto/delete/delete_${lower}_db_request.dart';
-import 'package:$packageProject/$lower/dto/get/get_${lower}_api_request.dart';
-import 'package:$packageProject/$lower/dto/get/get_${lower}_db_request.dart';
-import 'package:$packageProject/$lower/dto/insert/insert_${lower}_api_request.dart';
-import 'package:$packageProject/$lower/dto/insert/insert_${lower}_db_request.dart';
-import 'package:$packageProject/$lower/dto/${lower}_request.dart';
-import 'package:$packageProject/$lower/dto/${lower}_response.dart';
-import 'package:$packageProject/$lower/dto/update/update_${lower}_api_request.dart';
-import 'package:$packageProject/$lower/dto/update/update_${lower}_db_request.dart';
-import 'package:$packageProject/$lower/${lower}_repository.dart';
+import 'package:$packageProject/feature/$lower/dto/delete/delete_${lower}_api_request.dart';
+import 'package:$packageProject/feature/$lower/dto/delete/delete_${lower}_db_request.dart';
+import 'package:$packageProject/feature/$lower/dto/get/get_${lower}_api_request.dart';
+import 'package:$packageProject/feature/$lower/dto/get/get_${lower}_db_request.dart';
+import 'package:$packageProject/feature/$lower/dto/insert/insert_${lower}_api_request.dart';
+import 'package:$packageProject/feature/$lower/dto/insert/insert_${lower}_db_request.dart';
+import 'package:$packageProject/feature/$lower/dto/${lower}_request.dart';
+import 'package:$packageProject/feature/$lower/dto/${lower}_response.dart';
+import 'package:$packageProject/feature/$lower/dto/update/update_${lower}_api_request.dart';
+import 'package:$packageProject/feature/$lower/dto/update/update_${lower}_db_request.dart';
+import 'package:$packageProject/feature/$lower/${lower}_repository.dart';
 """;
-  
+
   return getClass(
       import: "$import",
       name: "${name}RepositoryService",
@@ -34,17 +34,17 @@ String getChildService(String name, String type) {
   String import = """
 import 'dart:async';
 
-import 'package:$packageProject/$lower/dto/delete/delete_${lower}_api_request.dart';
-import 'package:$packageProject/$lower/dto/delete/delete_${lower}_db_request.dart';
-import 'package:$packageProject/$lower/dto/get/get_${lower}_api_request.dart';
-import 'package:$packageProject/$lower/dto/get/get_${lower}_db_request.dart';
-import 'package:$packageProject/$lower/dto/insert/insert_${lower}_api_request.dart';
-import 'package:$packageProject/$lower/dto/insert/insert_${lower}_db_request.dart';
-import 'package:$packageProject/$lower/dto/${lower}_request.dart';
-import 'package:$packageProject/$lower/dto/${lower}_response.dart';
-import 'package:$packageProject/$lower/dto/update/update_${lower}_api_request.dart';
-import 'package:$packageProject/$lower/dto/update/update_${lower}_db_request.dart';
-import 'package:$packageProject/$lower/${lower}_repository.dart';
+import 'package:$packageProject/feature/$lower/dto/delete/delete_${lower}_api_request.dart';
+import 'package:$packageProject/feature/$lower/dto/delete/delete_${lower}_db_request.dart';
+import 'package:$packageProject/feature/$lower/dto/get/get_${lower}_api_request.dart';
+import 'package:$packageProject/feature/$lower/dto/get/get_${lower}_db_request.dart';
+import 'package:$packageProject/feature/$lower/dto/insert/insert_${lower}_api_request.dart';
+import 'package:$packageProject/feature/$lower/dto/insert/insert_${lower}_db_request.dart';
+import 'package:$packageProject/feature/$lower/dto/${lower}_request.dart';
+import 'package:$packageProject/feature/$lower/dto/${lower}_response.dart';
+import 'package:$packageProject/feature/$lower/dto/update/update_${lower}_api_request.dart';
+import 'package:$packageProject/feature/$lower/dto/update/update_${lower}_db_request.dart';
+import 'package:$packageProject/feature/$lower/${lower}_repository.dart';
 """;
 
   return getClass(
@@ -160,8 +160,9 @@ String _getBodyChildService(String name, String type) {
 String getRepoAbstract(String name) {
   String lower = name.toLowerCase();
   String import = """
-import 'package:$packageProject/$lower/dto/${lower}_response.dart';
-import 'package:$packageProject/$lower/dto/${lower}_request.dart';
+import 'package:$packageProject/feature/$lower/dto/${lower}_response.dart';
+import 'package:$packageProject/feature/$lower/dto/${lower}_request.dart';
+import 'package:$packageProject/feature/repository.dart';
 """;
   return getClass(
       isAbstract: true,

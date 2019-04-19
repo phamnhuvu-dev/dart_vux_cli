@@ -12,8 +12,8 @@ String getBlocService(String name, bool isMulti) {
   String lower = name.toLowerCase();
   String import = """
 import 'dart:async';
-import 'package:$packageProject/${lower}/${lower}_repository.dart';
-import 'package:dart_vux_cli/${lower}/model/${lower}.dart';
+import 'package:$packageProject/feature/${lower}/${lower}_bloc.dart';
+import 'package:$packageProject/feature/${lower}/model/${lower}.dart';
 import 'package:rxdart/rxdart.dart';
 """;
   
@@ -96,7 +96,8 @@ String getBlocAbstract(String name, bool isMulti) {
   String lower = name.toLowerCase();
   String import = """
 import 'dart:async';
-import 'package:$packageProject/$lower/model/$lower.dart';  
+import 'package:$packageProject/feature/$lower/model/$lower.dart';
+import 'package:$packageProject/feature/bloc.dart';
 """;
   
   return getClass(

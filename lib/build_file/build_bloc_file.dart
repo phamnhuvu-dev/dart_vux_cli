@@ -4,6 +4,7 @@ import 'package:dart_vux_cli/template/bloc_template.dart';
 
 
 void buildBloc(String rootPath, String name, bool isMulti) {
+  rootPath = "$rootPath/feature";
   String lowerName = name.toLowerCase();
 
   // Bloc Abstract

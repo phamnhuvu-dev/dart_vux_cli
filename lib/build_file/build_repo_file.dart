@@ -5,6 +5,7 @@ import 'package:dart_vux_cli/common.dart';
 import 'package:dart_vux_cli/template/repo_template.dart';
 
 void buildRepo(String rootPath, String name) {
+  rootPath = "$rootPath/feature";
   String lowerName = name.toLowerCase();
 
   // Bloc Abstract
@@ -53,19 +54,19 @@ void buildDto(String rootPath, String name, String type) {
   Directory.current = pathDtoType;
   final fileApi = File("${lowerType}_${lowerName}_api_request.dart");
   fileApi.writeAsStringSync(getClass(
-    import: "import 'package:$packageProject/$lowerName/dto/${lowerName}_request.dart';",
+    import: "import 'package:$packageProject/feature/$lowerName/dto/${lowerName}_request.dart';",
     name: "$type${name}ApiRequest",
     implement: "${name}Request",
   ));
   final fileDb = File("${lowerType}_${lowerName}_db_request.dart");
   fileDb.writeAsStringSync(getClass(
-    import: "import 'package:$packageProject/$lowerName/dto/${lowerName}_request.dart';",
+    import: "import 'package:$packageProject/feature/$lowerName/dto/${lowerName}_request.dart';",
     name: "$type${name}DbRequest",
     implement: "${name}Request",
   ));
   final fileRs = File("${lowerType}_${lowerName}_response.dart");
   fileRs.writeAsStringSync(getClass(
-    import: "import 'package:$packageProject/$lowerName/dto/${lowerName}_response.dart';",
+    import: "import 'package:$packageProject/feature/$lowerName/dto/${lowerName}_response.dart';",
     name: "$type${name}Response",
     implement: "${name}Response",
   ));

@@ -23,9 +23,6 @@ main(List<String> arguments) {
     ..addOption(service, defaultsTo: "", abbr: "s")
     ..addOption(output, defaultsTo: "", abbr: "o");
   argResults = parser.parse(arguments);
-  print(argResults[output]);
-  print(argResults[service]);
-  print(argResults[init]);
 
   String currentPath = Directory.current.path;
   if (currentPath.contains('lib') ||
@@ -54,10 +51,4 @@ main(List<String> arguments) {
   } else if (argResults[init]) {
     buildInit(rootPath);
   }
-
-//  final parser = new ArgParser()..addFlag(lineNumber, negatable: false, abbr: 'n');
-
-//  argResults = parser.parse(arguments);
-//  List<String> paths = argResults.rest;
-//  print(paths.first);
 }
